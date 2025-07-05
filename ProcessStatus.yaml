@@ -1,0 +1,4 @@
+- name: Check Process Execution Status
+  run: |
+    curl -u "${{ secrets.BOOMI_USERNAME }}:${{ secrets.BOOMI_PASSWORD }}" \
+         "https://api.boomi.com/api/rest/v1/${{ secrets.BOOMI_ACCOUNT_ID }}/ProcessStatus"

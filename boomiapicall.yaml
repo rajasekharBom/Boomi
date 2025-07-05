@@ -1,0 +1,10 @@
+- name: Trigger Boomi Process Execution
+  run: |
+    curl -u "${{ secrets.BOOMI_USERNAME }}:${{ secrets.BOOMI_PASSWORD }}" \
+         -H "Content-Type: application/json" \
+         -d '{
+               "processId": "your-process-id",
+               "atomId": "your-atom-id",
+               "parameters": {}
+             }' \
+         "https://api.boomi.com/api/rest/v1/${{ secrets.BOOMI_ACCOUNT_ID }}/ProcessExecution"
